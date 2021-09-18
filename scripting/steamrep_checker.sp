@@ -11,7 +11,7 @@
 #include <sourcebanspp>
 #define REQUIRE_PLUGIN
 
-#define PLUGIN_VERSION		"2.0.0"
+#define PLUGIN_VERSION		"2.0.1"
 #define STEAMREP_URL		"http://steamrep.com/id2rep.php"
 #define STEAM_API_URL		"http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/"
 
@@ -470,17 +470,20 @@ public void Event_PlayerChangeName(Event event, const char[] name, bool dontBroa
 	switch (tagType) {
 		case TagType_Scammer: {
 			if (StrContains(clientName, "[SCAMMER]") != 0) {
-				KickClient(client, "Kicked from server\n\nDo not attempt to remove the [SCAMMER] tag");
+				Format(clientName, sizeof(clientName), "[SCAMMER] %s", clientName);
+				SetClientName(client, clientName);
 			}
 		}
 		case TagType_TradeBanned: {
 			if (StrContains(clientName, "[TRADE BANNED]") != 0) {
-				KickClient(client, "Kicked from server\n\nDo not attempt to remove the [TRADE BANNED] tag");
+				Format(clientName, sizeof(clientName), "[TRADE BANNED] %s", clientName);
+				SetClientName(client, clientName);
 			}
 		}
 		case TagType_TradeProbation: {
 			if (StrContains(clientName, "[TRADE PROBATION]") != 0) {
-				KickClient(client, "Kicked from server\n\nDo not attempt to remove the [TRADE PROBATION] tag");
+				Format(clientName, sizeof(clientName), "[TRADE PROBATION] %s", clientName);
+				SetClientName(client, clientName);
 			}
 		}
 	}
