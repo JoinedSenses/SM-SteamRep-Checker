@@ -33,7 +33,7 @@ public Plugin myinfo = {
 	author      = "Dr. McKay, JoinedSenses",
 	description = "Checks a user's SteamRep upon connection",
 	version     = PLUGIN_VERSION,
-	url         = "http://www.doctormckay.com"
+	url         = "https://github.com/JoinedSenses/SM-SteamRep-Checker/"
 };
 
 ConVar cvarDealMethod;
